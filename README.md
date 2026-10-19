@@ -25,14 +25,6 @@ Or open the project as a Maven project in NetBeans and run `Main.java`.
 - Full sent-message details and total count.
 - JUnit 5 tests and GitHub Actions CI.
 
-## Important rubric clarifications
-
-- The rubric says recipient numbers have a maximum of 10 characters but its accepted example `+27718693002` contains 12 characters. The implementation validates `+27` plus nine mobile digits to match the accepted test case.
-- The expected `00:0:HITONIGHT` hash requires an ID starting with `00`; the unit test supplies a deterministic ID `0012345678` while production IDs are random ten-digit numbers. The first message number is zero as shown in the example.
-- The sample second recipient `08575975889` is invalid; the test verifies its rejection. To demonstrate discard action separately, tests use a valid recipient.
-- The instructions disagree on exact messages in some places; this project follows the explicit Part 2 assertEquals messages.
-- JSON is saved to `data/stored-messages.json` only after choosing Store.
-- JSON stores message content as plain text for this educational task. Do not use real passwords or sensitive conversations in demos.
 
 ## References
 
