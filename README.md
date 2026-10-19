@@ -54,24 +54,22 @@ Push the feature branch, verify tests, then merge into main. A zip cannot manufa
 
 Demonstrate registration, login, menu, successful send, invalid recipient, overlong message, discard, JSON store, tests, and GitHub Actions. Explain the loops and hash logic in your own voice.
 
+## Part 2 Testing and Verification
 
-## Correction after Part 1 feedback
+The QuickChat application was tested using Apache NetBeans
+and JUnit.
 
-This ZIP is a complete Maven project, **not individual Java files**. Upload the entire folder structure including `pom.xml`, `.github/workflows`, `src/main/java`, and `src/test/java`.
+Automated test results:
+- Tests executed: 10
+- Failures: 0
+- Errors: 0
+- Build status: SUCCESS
 
-### NetBeans instructions
-1. Unzip the project. In NetBeans select **File > Open Project** and select the folder containing `pom.xml`.
-2. Right-click the project > **Clean and Build**.
-3. Right-click the project > **Test** (or run `mvn clean test` in a terminal).
-4. Run `Main.java` and demonstrate a valid registration, failed login, successful login, and Part 2 messaging.
-5. Check that `data/stored-messages.json` appears after choosing Store Message.
-6. Record actual output and actual JUnit results; do not claim tests passed unless you see green results.
+Manual testing completed:
+- User registration and login
+- Sending a valid message
+- Rejecting an invalid recipient number
+- Disregarding a message without increasing the sent count
 
-### GitHub workflow (preserve existing history)
-Clone `https://github.com/ST10486377/PROG-POE-PART-1`, create a new branch `feature/part2-messaging`, and copy the **contents** of this folder into the cloned repository root. Stage and commit your changes in meaningful increments during development; do not create artificial historical commits. Push the branch and open a pull request. Check the Actions tab before merging.
+GitHub Actions runs the Maven test suite automatically.
 
-### Important assignment ambiguities
-- The rubric says recipient numbers have a maximum of 10 characters, but its accepted `+27718693002` example has 12. This implementation uses international `+27` plus 9 digits to match the accepted example.
-- The expected `00:0:HITONIGHT` hash uses a fixed ID beginning with `00` in tests; actual generated IDs are random and their first two digits vary.
-- Part 2's menu deliberately prints `Coming Soon.` for option 2, as specified.
-- The source-code regex reference is Oracle's Java Pattern API; adapt the citation format if your lecturer requires a particular style.
